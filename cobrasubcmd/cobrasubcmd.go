@@ -22,7 +22,7 @@ var rootCmd = &cobra.Command{Use: "cobrasubcmd"}
 
 func init() {
 	cobra.OnInitialize(initConfig)
-	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.cobra.yaml.yaml)")
+	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.gokazekim.yaml.yaml)")
 	rootCmd.PersistentFlags().StringVarP(&projectBase, "projectbase", "b", "", "base project directory eg. github.com/spf13/")
 	rootCmd.PersistentFlags().StringP("author", "a", "YOUR NAME", "Author name for copyright attribution")
 	rootCmd.PersistentFlags().StringVarP(&userLicense, "license", "l", "", "Name of license for the project (can provide `licensetext` in config)")
@@ -47,7 +47,7 @@ func initConfig() {
 		// Find home directory.
 		configDir := "."
 
-		// Search config in home directory with name ".cobra.yaml" (without extension).
+		// Search config in home directory with name ".gokazekim.yaml" (without extension).
 		viper.AddConfigPath(configDir)
 		viper.SetConfigName(".cobra")
 	}
